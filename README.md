@@ -7,16 +7,7 @@ This is a complete security toolkit for Ubuntu servers with public IP addresses,
 ### Core Security Scripts
 1. **secure-multiuser-setup.sh** - Main security hardening
 2. **security-check.sh** - Health and audit tool
-3. **admin-menu.sh** - Interactive administration
-4. **vpn-protection-setup.sh** - VPN deployment
-
-### Documentation
-5. **README.md** - Main overview and quick reference
-6. **QUICK-START.md** - Fast setup with visual guides
-7. **SECURITY-GUIDE.md** - Detailed security procedures
-8. **VPN-PROTECTION-GUIDE.md** - Complete VPN guide
-9. **VPN-QUICK-REFERENCE.md** - VPN commands cheat sheet
-10. **INDEX.md** - This file
+3. **vpn-protection-setup.sh** - VPN deployment
 
 ---
 
@@ -71,34 +62,7 @@ sudo ./security-check.sh
 
 ---
 
-## Documentation Guide
-
-### For First-Time Users
-**Start here:** QUICK-START.md
-- Visual diagrams
-- Step-by-step setup
-- Common scenarios
-
-### For System Administrators
-**Read:** README.md → SECURITY-GUIDE.md
-- Complete feature reference
-- Best practices
-- Maintenance procedures
-
-### For VPN Setup
-**Read:** VPN-PROTECTION-GUIDE.md
-- Compare VPN solutions
-- Step-by-step for each option
-- Troubleshooting guide
-
-**Keep handy:** VPN-QUICK-REFERENCE.md
-- Common commands
-- Quick troubleshooting
-- Architecture diagrams
-
----
-
-## 🎯 By Use Case
+## By Use Case
 
 ### Home Lab / Learning
 **Recommended:**
@@ -149,7 +113,7 @@ sudo ./security-check.sh
 
 ---
 
-## 🛠️ Script Functions Overview
+## Script Functions Overview
 
 ### secure-multiuser-setup.sh
 **What it does:**
@@ -187,19 +151,6 @@ sudo ./security-check.sh
 **Time:** 1-2 minutes  
 **Use:** Run weekly or when suspicious
 
-### admin-menu.sh
-**What it does:**
-Interactive menu for:
-- User management (add/remove/quota)
-- SSH and fail2ban monitoring
-- Firewall management
-- System monitoring
-- Log viewing
-- Maintenance tasks
-
-**Time:** N/A (interactive)  
-**Use:** Daily administration
-
 ### vpn-protection-setup.sh
 **What it does:**
 Install and configure:
@@ -214,7 +165,7 @@ Install and configure:
 
 ---
 
-## 🔐 Security Layers
+## Security Layers
 
 ### Layer 1: Network
 - UFW firewall with default-deny
@@ -260,87 +211,11 @@ Install and configure:
 
 ---
 
-## 📊 Feature Matrix
-
-| Feature | Script | Time | Difficulty | Priority |
-|---------|--------|------|------------|----------|
-| **SSH Hardening** | secure-multiuser | 5min | Easy | High |
-| **Firewall (UFW)** | secure-multiuser | 2min | Easy | High |
-| **Fail2ban** | secure-multiuser | 3min | Easy | High |
-| **User Quotas** | secure-multiuser | 5min | Medium | Medium |
-| **Auto Updates** | secure-multiuser | 2min | Easy | High |
-| **Audit Logging** | secure-multiuser | 3min | Medium | Medium |
-| **WireGuard VPN** | vpn-protection | 15min | Medium | High |
-| **Tailscale VPN** | vpn-protection | 10min | Easy | High |
-| **Port Knocking** | vpn-protection | 5min | Medium | Low |
-| **GeoIP Block** | vpn-protection | 10min | Medium | Low |
-
----
-
-## 🎓 Learning Path
-
-### Week 1: Basics
-- [ ] Understand security concepts
-- [ ] Run secure-multiuser-setup.sh
-- [ ] Add/remove test users
-- [ ] Run security-check.sh daily
-- [ ] Read README.md and QUICK-START.md
-
-### Week 2: VPN
-- [ ] Choose VPN solution
-- [ ] Setup VPN (Tailscale recommended)
-- [ ] Configure clients
-- [ ] Test connectivity
-- [ ] Read VPN-PROTECTION-GUIDE.md
-
-### Week 3: Hardening
-- [ ] Restrict SSH to VPN only
-- [ ] Setup port knocking
-- [ ] Configure email alerts
-- [ ] Test fail2ban
-- [ ] Read SECURITY-GUIDE.md
-
-### Week 4: Operations
-- [ ] Create maintenance schedule
-- [ ] Document procedures
-- [ ] Setup monitoring
-- [ ] Practice incident response
-- [ ] Regular security audits
-
----
-
-## 🆘 Troubleshooting Index
-
-### Can't SSH After Setup
-**File:** QUICK-START.md → Troubleshooting  
-**Quick fix:** Check SSH port changed to 2222
-
-### VPN Not Connecting
-**File:** VPN-QUICK-REFERENCE.md → Emergency  
-**Quick fix:** Check firewall allows VPN port
-
-### Locked Out
-**File:** SECURITY-GUIDE.md → Incident Response  
-**Quick fix:** Use cloud console or recovery mode
-
-### Quota Issues
-**File:** SECURITY-GUIDE.md → Troubleshooting  
-**Quick fix:** Remount with quotas
-
-### Performance Issues
-**File:** README.md → Monitoring  
-**Quick fix:** Run security-check.sh
-
----
-
-## 📞 Quick Help Commands
+## Quick Help Commands
 
 ```bash
 # Security status
 sudo ./security-check.sh
-
-# Interactive admin
-sudo ./admin-menu.sh
 
 # View active connections
 sudo wg show              # WireGuard
@@ -420,72 +295,7 @@ sudo ./admin-menu.sh  # Option 3
 
 ---
 
-## 📦 File Download Priority
-
-### Must Have
-1. secure-multiuser-setup.sh
-2. README.md
-3. QUICK-START.md
-
-### Highly Recommended
-4. security-check.sh
-5. vpn-protection-setup.sh
-6. VPN-PROTECTION-GUIDE.md
-
-### Nice to Have
-7. admin-menu.sh
-8. SECURITY-GUIDE.md
-9. VPN-QUICK-REFERENCE.md
-10. INDEX.md (this file)
-
----
-
-## 🎯 Success Checklist
-
-### After Initial Setup
-- [ ] SSH works on new port
-- [ ] Admin user created
-- [ ] Firewall active
-- [ ] Fail2ban running
-- [ ] Security check passes
-- [ ] Users can login
-- [ ] Quotas enforced
-
-### After VPN Setup
-- [ ] VPN service running
-- [ ] Can connect from device
-- [ ] SSH works through VPN
-- [ ] Firewall allows VPN
-- [ ] Clients configured
-- [ ] Backup of configs
-
-### Production Ready
-- [ ] SSH restricted to VPN
-- [ ] Email alerts configured
-- [ ] Monitoring active
-- [ ] Documentation complete
-- [ ] Backup strategy in place
-- [ ] Team trained
-- [ ] Incident response ready
-
----
-
-## 💡 Pro Tips
-
-1. **Always test in a VM first** if new to Linux administration
-2. **Keep a second SSH session open** when making firewall changes
-3. **Document everything** - future you will thank you
-4. **Start simple** - add complexity as you learn
-5. **Backup configs** before making changes
-6. **Monitor logs** - they tell you what's happening
-7. **Use VPN** - it's the best protection for public IPs
-8. **Regular audits** - security is ongoing, not one-time
-9. **Stay updated** - subscribe to security mailing lists
-10. **Have a rollback plan** - always know how to undo changes
-
----
-
-## 📚 Additional Resources
+## Additional Resources
 
 ### Official Documentation
 - Ubuntu Security: https://ubuntu.com/security
