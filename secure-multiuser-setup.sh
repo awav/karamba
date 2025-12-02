@@ -66,6 +66,7 @@ if ! id "$ADMIN_USER" &>/dev/null; then
     useradd -m -s /bin/bash -G sudo "$ADMIN_USER"
     echo "Please set password for $ADMIN_USER:"
     passwd "$ADMIN_USER"
+    sync
 else
     warn "User $ADMIN_USER already exists, skipping..."
 fi
@@ -454,6 +455,7 @@ chmod +x /etc/cron.daily/rkhunter
 log "Restarting services..."
 systemctl restart ssh
 systemctl restart rsyslog
+sync
 
 ################################################################################
 # Summary
